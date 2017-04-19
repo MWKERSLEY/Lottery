@@ -12,13 +12,14 @@
 </head>
 <body>
     <h1>Lottery Number Picker</h1>
+    <%--http://tangledindesign.com/demos/css3-transitions/active/--%>
     <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
     <form id="form1" runat="server">
     <div class="container">
     <div class="row">
         <div class="col-xs-12">
     <div class="numberOptions">
-    <asp:ImageMap ID="ImageMap1" runat="server"></asp:ImageMap>
+    <asp:ImageMap ID="ImageMap1" runat="server" ImageUrl="http://gifgifs.com/animations/other-animations/fire/Bonfire.gif"></asp:ImageMap>
     <asp:ImageMap ID="ImageMap2" runat="server"></asp:ImageMap>
     <asp:ImageMap ID="ImageMap3" runat="server"></asp:ImageMap>
     <asp:ImageMap ID="ImageMap4" runat="server"></asp:ImageMap>
@@ -42,7 +43,9 @@
         <asp:Panel ID="PanelStats" runat="server" Visible="False">
             <asp:Label ID="LabelNoOfDraws" runat="server" Text="Total number of draws: "></asp:Label><asp:Label ID="NoOfDraws" runat="server" Text="0"></asp:Label><br />
             <asp:Label ID="LabelCostToPlay" runat="server" Text="Total Cost So Far: "></asp:Label><asp:Label ID="CostToPlay" runat="server" Text="£0"></asp:Label><br />
-            <asp:Label ID="LabelMoneyWon" runat="server" Text="Total Winnings: "></asp:Label><asp:Label ID="MoneyWon" runat="server" Text="£0"></asp:Label><br /><br />
+            <asp:Label ID="LabelMoneyWon" runat="server" Text="Total Winnings: "></asp:Label><asp:Label ID="MoneyWon" runat="server" Text="£0"></asp:Label><br />
+            <asp:Label ID="LabelReturnRate" runat="server" Text="Return: "></asp:Label><asp:Label ID="ReturnRate" runat="server" Text="0%"></asp:Label><br />
+            <asp:Label ID="LabelOutOfDraws" runat="server" Visible="False" Font-Bold="True" Font-Size="Larger" ForeColor="Red"></asp:Label><br />
             <asp:Table ID="TableStats" 
                 runat="server" 
                 Font-Size="Medium" 
@@ -51,8 +54,8 @@
                 HorizontalAlign="Center">
                 <asp:TableHeaderRow 
                     runat="server"
-                    >
-                    <asp:TableHeaderCell Font-Bold="False">Outcome</asp:TableHeaderCell>
+                    HorizontalAlign="Center">
+                    <asp:TableHeaderCell Font-Bold="False" HorizontalAlign="Center">Outcomes</asp:TableHeaderCell>
                     <asp:TableHeaderCell Font-Bold="False">Occurances</asp:TableHeaderCell>
                     <asp:TableHeaderCell Font-Bold="False">Winnings</asp:TableHeaderCell>
                     <asp:TableHeaderCell Font-Bold="False">Expected Winnings</asp:TableHeaderCell>
@@ -62,7 +65,7 @@
                     ID="TableRow1" 
                     runat="server"
                     Visible="False">
-                    <asp:TableCell>1-Ball Match</asp:TableCell>
+                    <asp:TableCell>1 Match</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches1" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches1Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
@@ -75,7 +78,7 @@
                     ID="TableRow2" 
                     runat="server"
                     >
-                    <asp:TableCell>2-Ball Match</asp:TableCell>
+                    <asp:TableCell>2 Matches</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches2" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches2Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
@@ -88,7 +91,7 @@
                     ID="TableRow3" 
                     runat="server"
                     >
-                    <asp:TableCell>3-Ball Match</asp:TableCell>
+                    <asp:TableCell>3 Matches</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches3" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches3Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
@@ -101,7 +104,7 @@
                     ID="TableRow4" 
                     runat="server"
                     >
-                    <asp:TableCell>4-Ball Match</asp:TableCell>
+                    <asp:TableCell>4 Matches</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches4" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches4Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
@@ -114,7 +117,7 @@
                     ID="TableRow5" 
                     runat="server"
                     >
-                    <asp:TableCell>5-Ball Match</asp:TableCell>
+                    <asp:TableCell>5 Matches</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches5" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches5Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
@@ -127,7 +130,7 @@
                     ID="TableRow6" 
                     runat="server"
                     >
-                    <asp:TableCell>5-Ball + Bonus Match</asp:TableCell>
+                    <asp:TableCell>5 Matches + Bonus</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches5Plus" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches5PlusWinnings" runat="server" Text=""></asp:Label></asp:TableCell>
@@ -140,7 +143,7 @@
                     ID="TableRow7" 
                     runat="server"
                     >
-                    <asp:TableCell>6-Ball Match</asp:TableCell>
+                    <asp:TableCell>6 Matches</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches6" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches6Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
@@ -195,6 +198,9 @@
             <asp:Label ID="LabelBallMatches5" runat="server" Text="5 Ball Matches: "></asp:Label><asp:Label ID="BallMatches5" runat="server" Text="0"></asp:Label><br />
             <asp:Label ID="LabelBallMatches5Plus" runat="server" Text="5 Ball Matches Plus Bonus Ball: "></asp:Label><asp:Label ID="BallMatches5Plus" runat="server" Text="0"></asp:Label><br />
             <asp:Label ID="LabelBallMatches6" runat="server" Text="6 Ball Matches: "></asp:Label><asp:Label ID="BallMatches6" runat="server" Text="0"></asp:Label><br />--%>
+            <br />
+            <asp:Button ID="ButtonReset" runat="server" Text="Reset Simulation" OnClick="ButtonReset_Click" />
+            <br />
         </asp:Panel>
     </div>
     <div class="graph">
@@ -206,7 +212,3 @@
     <%--<asp:UpdateProgress ID="UpdateProgress1" runat="server"></asp:UpdateProgress>--%>
 </body>
 </html>
-<%--
-    
-    
-    --%>
