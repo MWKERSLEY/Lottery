@@ -8,9 +8,31 @@
 <head runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="StyleSheet.css" rel="stylesheet" />
+    <link href="BallStyles.css" rel="stylesheet" />
     <title>Lottery Picker</title>
 </head>
-<body>
+<body><div class="wrapper">
+
+	<h1>CSS3 Transitions with <code>:active</code></h1>
+    <a href="http://www.tangledindesign.com/blog/get-the-ball-rolling-with-css3-transitions"><span>Back to article</span> - Get the Ball Rolling with CSS3 Transitions</a>
+    
+    <p>*Click and hold on the pool ball*</p>
+
+	<div class="ball">
+    	<span>2</span>
+    </div>
+    
+    <div class="table">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+        <span class="four"></span>
+        <span class="five"></span>
+        <span class="six"></span>
+        <span class="seven"></span>
+    </div>
+    
+</div>
     <h1>Lottery Number Picker</h1>
     <%--http://tangledindesign.com/demos/css3-transitions/active/--%>
     <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
@@ -19,12 +41,12 @@
     <div class="row">
         <div class="col-xs-12">
     <div class="numberOptions">
-    <asp:ImageMap ID="ImageMap1" runat="server" ImageUrl="http://gifgifs.com/animations/other-animations/fire/Bonfire.gif"></asp:ImageMap>
+<%--    <asp:ImageMap ID="ImageMap1" runat="server" ImageUrl="http://gifgifs.com/animations/other-animations/fire/Bonfire.gif"></asp:ImageMap>
     <asp:ImageMap ID="ImageMap2" runat="server"></asp:ImageMap>
     <asp:ImageMap ID="ImageMap3" runat="server"></asp:ImageMap>
     <asp:ImageMap ID="ImageMap4" runat="server"></asp:ImageMap>
     <asp:ImageMap ID="ImageMap5" runat="server"></asp:ImageMap>
-    <asp:ImageMap ID="ImageMap6" runat="server"></asp:ImageMap>
+    <asp:ImageMap ID="ImageMap6" runat="server"></asp:ImageMap>--%>
         <asp:Label class="ballLabel" ID="LabelBall1" runat="server" Text=""></asp:Label> <asp:Label class="ballLabel" ID="LabelBall2" runat="server" Text=""></asp:Label><asp:Label class="ballLabel" ID="LabelBall3" runat="server" Text=""></asp:Label><asp:Label class="ballLabel" ID="LabelBall4" runat="server" Text=""></asp:Label><asp:Label class="ballLabel" ID="LabelBall5" runat="server" Text=""></asp:Label><asp:Label class="ballLabel" ID="LabelBall6" runat="server" Text=""></asp:Label>
         <br /><br />
         <asp:Button ID="ButtonPickNumbers" runat="server" Text="Generate New Numbers" OnClick="ButtonPickNumbers_Click" />
