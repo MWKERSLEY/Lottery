@@ -9,8 +9,10 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>JScript();</script>");
         if (LabelBall1.Text=="")
         {
+            
             List<int> pickList = getDraw();
             pickList.Sort();
             LabelBall1.Text = pickList[0].ToString();
@@ -42,6 +44,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void ButtonPickNumbers_Click(object sender, EventArgs e)
     {
+        ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>JScript();</script>");
         List<int> pickList = getDraw();
         pickList.Sort();
         LabelBall1.Text = pickList[0].ToString();
@@ -130,9 +133,9 @@ public partial class _Default : System.Web.UI.Page
                 }
             }
 
-            int raffleNumber = millionaire.Next(30000000);//30million
+            int raffleNumber = millionaire.Next(12500000);//30million//12.5m
 
-            if (raffleNumber == 0)
+            if (raffleNumber == 1)
             {
                 Raffle1MatchesNumber++;
             }
@@ -157,7 +160,7 @@ public partial class _Default : System.Web.UI.Page
 
             //Winnings Column
             double b2w = new2Matches;
-            double b3w = (new3Matches * 10);
+            double b3w = (new3Matches * 25);
             double b4w = new4Matches * 100;
             double b5w = new5Matches * 1000;
             double b5pw = new5PlusMatches * 50000;
@@ -169,7 +172,7 @@ public partial class _Default : System.Web.UI.Page
             //TotalWinnings.Text = totalMatchesNumber.ToString();
             BallMatches1Winnings.Text = "Nothing!";
             BallMatches2Winnings.Text = new2Matches.ToString() + " Dips";
-            BallMatches3Winnings.Text = "£" + (new3Matches * 10).ToString();
+            BallMatches3Winnings.Text = "£" + (new3Matches * 25).ToString();
             BallMatches4Winnings.Text = "£" + (new4Matches * 100).ToString();
             BallMatches5Winnings.Text = "£" + (new5Matches * 1000).ToString();
             BallMatches5PlusWinnings.Text = "£" + (new5PlusMatches * 50000).ToString();
@@ -184,13 +187,13 @@ public partial class _Default : System.Web.UI.Page
 
             //expected values
             double b2e = drawCount / 10.3;
-            double b3e = 10 * (drawCount / 96.2);
+            double b3e = 25 * (drawCount / 96.2);
             double b4e = 100 * (drawCount / 2179.85);
             double b5e = 1000 * (drawCount / (double)144415);
             double b5pe = drawCount * (50000 / (double)7509579);
             double b6e = drawCount * (2000000 / (double)45057474);
-            double r1e = drawCount * (1000000 / (double)30000000);
-            double r2e = 20 * drawCount * (20000 / (double)30000000);
+            double r1e = drawCount * (1000000 / (double)12500000);
+            double r2e = 20 * drawCount * (20000 / (double)12500000);
             double te = b2e * 2 + b3e + b4e + b5e + b5pe + b6e + r1e + r2e;
             //Expected Column Texts
             Raffle1Expected.Text = string.Format("£{0:N0}", r1e);
@@ -229,12 +232,67 @@ public partial class _Default : System.Web.UI.Page
         else
         {
             LabelOutOfDraws.Visible = true;
-            LabelOutOfDraws.Text = "OUT OF DRAWS! Click 'Reset Simulation' if you want to try your luck again!";
+            LabelOutOfDraws.Text = "DRAWS LIMIT REACHED! Click 'Reset Simulation' if you want to try your luck again!";
         }
     }
 
     protected void ButtonReset_Click(object sender, EventArgs e)
     {
+        PanelStats.Visible = false;
         LabelOutOfDraws.Visible = false;
+
+        NoOfDraws.Text = "0";
+        CostToPlay.Text = "£0";
+        
+        //Outcomes Column
+        TotalMatches.Text = "0";
+        Raffle1Matches.Text = "0";
+        BallMatches1.Text = "0";
+        BallMatches2.Text = "0";
+        BallMatches3.Text = "0";
+        BallMatches4.Text = "0";
+        BallMatches5.Text = "0";
+        BallMatches5Plus.Text = "0";
+        BallMatches6.Text = "0";
+
+        //Winnings Column
+
+        //TotalWinnings.Text = totalMatchesNumber.ToString();
+        BallMatches1Winnings.Text = "Nothing!";
+        BallMatches2Winnings.Text = "£0";
+        BallMatches3Winnings.Text = "£0";
+        BallMatches4Winnings.Text = "£0";
+        BallMatches5Winnings.Text = "£0";
+        BallMatches5PlusWinnings.Text = "£0";
+        BallMatches6Winnings.Text = "£0";
+        Raffle1Winnings.Text = string.Format("£{0:N0}", 0);
+        Raffle2Winnings.Text = string.Format("£{0:N0}", 0);
+        TotalWinnings.Text = string.Format("£{0:N0}", 0);
+
+        //main statistics
+        MoneyWon.Text = string.Format("£{0:N0}", 0);
+        ReturnRate.Text = string.Format("{0:P2}", 0);
+        
+        //Expected Column Texts
+        Raffle1Expected.Text = string.Format("£{0:N0}", 0);
+        Raffle2Expected.Text = string.Format("£{0:N0}", 0);
+        BallMatches2Expected.Text = "0 Dips";
+        BallMatches3Expected.Text = string.Format("£{0:N0}", 0);
+        BallMatches4Expected.Text = string.Format("£{0:N0}", 0);
+        BallMatches5Expected.Text = string.Format("£{0:N0}", 0);
+        BallMatches5PlusExpected.Text = string.Format("£{0:N0}", 0);
+        BallMatches6Expected.Text = string.Format("£{0:N0}", 0);
+        TotalExpected.Text = string.Format("£{0:N0}", 0);
+
+        //Luck
+        BallMatches2Luck.Text = string.Format("{0:P2}", 0);
+        BallMatches3Luck.Text = string.Format("{0:P2}", 0);
+        BallMatches4Luck.Text = string.Format("{0:P2}", 0);
+        BallMatches5Luck.Text = string.Format("{0:P2}", 0);
+        BallMatches5PlusLuck.Text = string.Format("{0:P2}", 0);
+        BallMatches6Luck.Text = string.Format("{0:P2}", 0);
+        Raffle1Luck.Text = string.Format("{0:P2}", 0);
+        Raffle2Luck.Text = string.Format("{0:P2}", 0);
+        Total1Luck.Text = string.Format("{0:P2}", 0);
     }
 }

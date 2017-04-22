@@ -1,6 +1,90 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
+    body {
+        margin: 0;
+    }
+
+    .demo-bar {
+        background: #252525;
+        width: 100%;
+        height: 118px;
+        margin-bottom: 40px;
+        float: left;
+    }
+
+    .demo-bar:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .demo-bar img:first-of-type {
+        float: left;
+        max-width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    .demo-bar .left {
+        float: left;
+        width: 60%;
+        height: 118px;
+        position: relative;
+    }
+
+    .demo-bar .right {
+        background: url(images/demo-bar-right.jpg) left no-repeat #2e2e2e;
+        width: 40%;
+        max-width: 350px;
+        height: 118px;
+        float: right;
+        position: relative;
+    }
+
+        .demo-bar p {
+            width: auto;
+            color: #666;
+            position: absolute;
+            bottom: 30px;
+            right: 5%;
+            text-align: right;
+            background: none;
+        }
+
+        .demo-bar a {
+            color: #ccc;
+            font-size: 10px;
+            border-bottom: 1px dotted #999;
+            text-transform: uppercase;
+        }
+
+        .twitter-buttons {
+            position: absolute;
+            top: 20px;
+            right: 5%;
+            text-align: right;
+        }
+
+    .clearfix {
+        clear: both;
+        display: block;
+    }
+
+    @media screen and (max-width:580px) {
+        .demo-bar .left {
+        }
+
+        .demo-bar .right {
+            background: none;
+        }
+
+        .demo-bar p {
+            width: 100px;
+            color: #252525;
+        }
+    }
 div.wrapper {
 	width:960px;
 	height:500px;
@@ -15,9 +99,9 @@ h1 {
 	margin-top:20px;
 	padding:10px;
 	background:#deeaf4;
-	border-radius:40px;
-	-moz-border-radius:40px;
-	-webkit-border-radius:40px;
+	border-radius:400px;
+	-moz-border-radius:400px;
+	-webkit-border-radius:400px;
 	margin-bottom:10px;
 }
 
@@ -41,16 +125,16 @@ p {
 	left:20px;
 	z-index:3;
 	background:#463a34;
-	border-radius:8px;
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
+	border-radius:80px;
+	-moz-border-radius:80px;
+	-webkit-border-radius:80px;
 	padding:3px;
 	}
 
 div.ball {
 	width:234px;
 	height:234px;
-	border-radius:117px;
+	border-radius:1170px;
 	font-family:arial;
 	background:#2081cb;
 	background-image: -moz-radial-gradient(90px 90px, circle, #dbeaf5 0%, #a5cdea 10%, #6fb3e6 20%, #238fe2 30%, #2081cb 50%, #0e5d99 70%);
@@ -80,7 +164,7 @@ div.ball span {
 	width:120px;
 	height:110px;
 	display:block;
-	border-radius:60px;
+	border-radius:600px;
 	-moz-border-radius:60px;
 	-webkit-border-radius:60px;
 	position:absolute;
@@ -95,7 +179,6 @@ div.ball span {
 	-o-transform:rotate(10deg);
 	-ms-transform:rotate(10deg);
 	transform:rotate(10deg);
-	background:#fff;
 	background: -moz-linear-gradient(top left, #fff 0%, #d1d6da 80%, #b9c0c5 100%);
 	background: -o-linear-gradient(top left, #fff 0%, #d1d6da 80%, #b9c0c5 100%);
 	background: -webkit-linear-gradient(top left, #fff 0%, #d1d6da 80%, #b9c0c5 100%);

@@ -1,9 +1,84 @@
-﻿body {
-    width: 100%;
+﻿* {
+    font-family: 'Martel Sans', sans-serif;
+}
+body {
+    width: 100vw;
     margin: 1%;
     text-align: center;
 }
-
 .ballLabel {
     margin: 3%;
+}
+#ButtonPickNumbers, #ButtonRunSimulations {
+    cursor: pointer;
+}
+body {
+    overflow-x: hidden;
+}
+.ball {
+    position: relative;
+    height: 12vw;
+    width: 12vw;
+    margin: 1.5vw;
+    border-radius: 7vw;
+    display: inline-block;
+    background:#2081cb;
+    background-image: -moz-radial-gradient(90px 90px, circle, #dbeaf5 0%, #a5cdea 10%, #6fb3e6 20%, #238fe2 30%, #2081cb 50%, #0e5d99 70%);
+    background-image: -webkit-radial-gradient(90px 90px, circle, #dbeaf5 0%, #a5cdea 10%, #6fb3e6 20%, #238fe2 30%, #2081cb 50%, #0e5d99 70%);
+    background-image: -o-radial-gradient(90px 90px, circle, #dbeaf5 0%, #a5cdea 10%, #6fb3e6 20%, #238fe2 30%, #2081cb 50%, #0e5d99 70%);
+                
+}
+.rollIn1 {
+    animation: roll1 2s linear;
+}
+/*.rollIn2 {
+    animation: roll2 2s linear;
+}*/
+.hidden {
+    visibility:hidden;
+}
+@keyframes roll1 {
+    from {
+        transform:rotate(606deg);
+        left: 100vw;
+    }
+    to {
+        left: 0;
+        transform:rotate(0deg);
+    }
+}
+/*@keyframes roll2 {
+    from {
+        transform:rotate(606deg);
+        left: 100vw;
+    }
+    to {
+        left: 0;
+        transform:rotate(0deg);
+    }
+}*/
+.ballLabel {
+    height: 5vw;
+    width: 5vw;
+    top: 2.2vw;
+    left: 2.5vw;
+    display: block;
+	position:absolute;
+    background-color: white;
+    font-size:3vw;
+    border-radius: 50%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+    color: darkblue;
+    font-weight:bold;
+	background:#fff;
+	background: -moz-linear-gradient(top left, #fff 0%, #d1d6da 80%, #b9c0c5 100%);
+	background: -o-linear-gradient(top left, #fff 0%, #d1d6da 80%, #b9c0c5 100%);
+	background: -webkit-linear-gradient(top left, #fff 0%, #d1d6da 80%, #b9c0c5 100%);
+	text-align:center;
+}
+h1 {
+    font-size: 4em;
+    padding: 0;
+    margin:0;
 }
