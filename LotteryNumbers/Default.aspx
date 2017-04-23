@@ -6,10 +6,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    Work to do:
+<%--Work to do:
     Add information box that appears on selection of an option
     Add script manager to stop the jumping up the page when reloading
-    Test script to add/remove class once script manager is in place.
+    Test script to add/remove class once script manager is in place.--%>
     <%--<link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Martel+Sans:900" rel="stylesheet">
