@@ -44,7 +44,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void ButtonPickNumbers_Click(object sender, EventArgs e)
     {
-        ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>JScript();</script>");
+        //ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>JScript();</script>");
         List<int> pickList = getDraw();
         pickList.Sort();
         LabelBall1.Text = pickList[0].ToString();
@@ -57,6 +57,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void ButtonRunSimulations_Click(object sender, EventArgs e)
     {
+        //ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>JScript2();</script>");
         int numberOfSims = Convert.ToInt32(DropDownListSims.SelectedValue);
         int drawCount = Convert.ToInt32(NoOfDraws.Text) + numberOfSims;
 

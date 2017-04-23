@@ -6,6 +6,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    Work to do:
+    Add information box that appears on selection of an option
+    Add script manager to stop the jumping up the page when reloading
+    Test script to add/remove class once script manager is in place.
     <%--<link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Martel+Sans:900" rel="stylesheet">
@@ -13,16 +17,20 @@
 
     <%--<link href="BallStyles.css" rel="stylesheet" />--%>
     <title>Lottery Simulator</title>
-    <style>
-    </style>
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
         function JScript() {
             var allBalls = document.getElementsByClassName('ball');
             for (var i = 0; i < allBalls.length; i++) {
                 allBalls[i].classList.add('rollIn1');
             }
         }
-    </script>
+        function JScript2() {
+            var allBalls = document.getElementsByClassName('ball');
+            for (var i = 0; i < allBalls.length; i++) {
+                allBalls[i].classList.remove('rollIn1');
+            }
+        }
+    </script>--%>
 </head>
 <body>
     <h1>Lottery Simulator</h1>
@@ -33,32 +41,26 @@
     <div class="row">
         <div class="col-xs-12">
     <div class="numberOptions">
-<%--    <asp:ImageMap ID="ImageMap1" runat="server" ImageUrl="http://gifgifs.com/animations/other-animations/fire/Bonfire.gif"></asp:ImageMap>
-    <asp:ImageMap ID="ImageMap2" runat="server"></asp:ImageMap>
-    <asp:ImageMap ID="ImageMap3" runat="server"></asp:ImageMap>
-    <asp:ImageMap ID="ImageMap4" runat="server"></asp:ImageMap>
-    <asp:ImageMap ID="ImageMap5" runat="server"></asp:ImageMap>
-    <asp:ImageMap ID="ImageMap6" runat="server"></asp:ImageMap>--%>
-<div class="wrapper">
-	<div class="ball">
-    	<asp:Label class="ballLabel" ID="LabelBall1" runat="server" Text=""></asp:Label>
-    </div>
-	<div class="ball">
-    	<asp:Label class="ballLabel" ID="LabelBall2" runat="server" Text=""></asp:Label>
-    </div>
-	<div class="ball">
-    	<asp:Label class="ballLabel" ID="LabelBall3" runat="server" Text=""></asp:Label>
-    </div>
-	<div class="ball">
-    	<asp:Label class="ballLabel" ID="LabelBall4" runat="server" Text=""></asp:Label>
-    </div>
-	<div class="ball">
-    	<asp:Label class="ballLabel" ID="LabelBall5" runat="server" Text=""></asp:Label>
-    </div>
-	<div class="ball">
-    	<asp:Label class="ballLabel" ID="LabelBall6" runat="server" Text=""></asp:Label>
-    </div>
-</div>
+        <div class="wrapper">
+	        <div class="ball rollIn1"><%--rollIn1--%>
+    	        <asp:Label class="ballLabel" ID="LabelBall1" runat="server" Text=""></asp:Label>
+            </div>
+	        <div class="ball rollIn1">
+    	        <asp:Label class="ballLabel" ID="LabelBall2" runat="server" Text=""></asp:Label>
+            </div>
+	        <div class="ball rollIn1">
+    	        <asp:Label class="ballLabel" ID="LabelBall3" runat="server" Text=""></asp:Label>
+            </div>
+	        <div class="ball rollIn1">
+    	        <asp:Label class="ballLabel" ID="LabelBall4" runat="server" Text=""></asp:Label>
+            </div>
+	        <div class="ball rollIn1">
+    	        <asp:Label class="ballLabel" ID="LabelBall5" runat="server" Text=""></asp:Label>
+            </div>
+	        <div class="ball rollIn1">
+    	        <asp:Label class="ballLabel" ID="LabelBall6" runat="server" Text=""></asp:Label>
+            </div>
+        </div>
         
     <div id="buttonDraw"><asp:Button ID="ButtonPickNumbers" runat="server" Text="Generate New Numbers" onClick="ButtonPickNumbers_Click" /></div><%-- OnClientClick="return JScript();" --%>
         <br />
@@ -230,6 +232,8 @@
         </asp:Panel>
     </div>
     <div class="graph">
+    </div>
+    <div class="moreInfo">
     </div>
     </div>
     </div>
