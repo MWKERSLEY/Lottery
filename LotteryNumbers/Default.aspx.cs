@@ -296,4 +296,9 @@ public partial class _Default : System.Web.UI.Page
         Raffle2Luck.Text = string.Format("{0:P2}", 0);
         Total1Luck.Text = string.Format("{0:P2}", 0);
     }
+
+    protected void ButtonMoreInfo_Click(object sender, EventArgs e)
+    {
+        PanelInfo.Visible = !(PanelInfo.Visible);
+    }
 }

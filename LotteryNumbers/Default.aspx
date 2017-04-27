@@ -37,6 +37,9 @@
     <%--http://tangledindesign.com/demos/css3-transitions/active/--%>
     <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
     <div class="container">
     <div class="row">
         <div class="col-xs-12">
@@ -72,7 +75,16 @@
             <asp:ListItem>1000</asp:ListItem>
             <asp:ListItem>10000</asp:ListItem>
         </asp:DropDownList>
-        <asp:Button ID="ButtonRunSimulations" runat="server" Text="Test These Numbers" OnClick="ButtonRunSimulations_Click" /><%--OnClientClick="return JScript2();" --%>
+        <asp:Button ID="ButtonRunSimulations" runat="server" Text="Test These Numbers" OnClick="ButtonRunSimulations_Click" /><%--OnClientClick="return JScript2();" --%><br />
+        <asp:Button ID="ButtonMoreInfo" runat="server" Text="More Info" OnClick="ButtonMoreInfo_Click" />
+        <asp:Panel ID="PanelInfo" runat="server" Visible="False">
+
+            <asp:Label runat="server" Text="- This is a simulation of the UK National Lottery 'Lotto' main draw.&lt;br /&gt;
+                - The value of a 'Lucky Dip' is £2.&lt;br /&gt;
+                - 'Luck' is calculated as the prizes/expectancy.&lt;br /&gt;
+                - 'Expectancy' is calculated as the average winnings for the number of tickets bought.&lt;br /&gt;
+                - Prizes are as follows: £2m-Jackpot, £50k-5 balls + bonus, £1k-5 balls, £100--4 balls, £25-3 balls, Lucky Dip-2 balls" BorderStyle="Solid" BorderWidth="2px" TextMode="MultiLine" Width="100%"></asp:Label>
+        </asp:Panel>
     </div>
     <div class="stats">
         <asp:Panel ID="PanelStats" runat="server" Visible="False">
@@ -231,13 +243,16 @@
             <br />
         </asp:Panel>
     </div>
-    <div class="graph">
-    </div>
+<%--    <div class="graph">
+    </div>--%>
     <div class="moreInfo">
     </div>
     </div>
     </div>
     </div>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
     <%--<asp:UpdateProgress ID="UpdateProgress1" runat="server"></asp:UpdateProgress>--%>
 </body>
