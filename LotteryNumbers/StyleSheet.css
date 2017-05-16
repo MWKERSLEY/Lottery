@@ -1,10 +1,12 @@
 ﻿* {
-    font-family: 'Martel Sans', sans-serif;
+    font-family: 'Martel Sans', sans-serif !important;
+    color:darkblue;
 }
 body {
-    width: 100vw;
-    margin: 1%;
+    width: 90%;
+    margin: 5%;
     text-align: center;
+    background-color:lightyellow;
 }
 .ballLabel {
     margin: 3%;
@@ -14,12 +16,13 @@ body {
 }
 body {
     overflow-x: hidden;
+    text-align:center;
 }
 .ball {
     position: relative;
     height: 12vw;
     width: 12vw;
-    margin: 1.5vw;
+    margin: 0.5%;
     border-radius: 7vw;
     display: inline-block;
     background:#2081cb;
@@ -76,9 +79,36 @@ body {
 	background: -o-linear-gradient(top left, #fff 0%, #d1d6da 80%, #b9c0c5 100%);
 	background: -webkit-linear-gradient(top left, #fff 0%, #d1d6da 80%, #b9c0c5 100%);
 	text-align:center;
+    padding-top:5%;
 }
 h1 {
     font-size: 4em;
     padding: 0;
     margin:0;
+    color:darkblue;
+    text-shadow: 2px 2px 2px black;
+}
+
+.PanelInfo {
+    /*width: 80% !important;*/
+}
+
+.numberOptions {
+    text-align:center;
+}
+
+#PanelStats {
+    border: 1px groove lightblue;
+    padding:10px;
+}
+#PanelInfo {
+    margin: 5px auto;
+}
+@media screen and (max-width: 500px) {
+    #TableStats {
+        font-size: smaller !important;
+    }
+    h1 {
+        font-size: 3em;
+    }
 }

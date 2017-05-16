@@ -6,16 +6,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<%--Work to do:
-    Add information box that appears on selection of an option
-    Add script manager to stop the jumping up the page when reloading
-    Test script to add/remove class once script manager is in place.--%>
-    <%--<link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Martel+Sans:900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Martel+Sans:900" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="StyleSheet.css" rel="stylesheet" />
-
-    <%--<link href="BallStyles.css" rel="stylesheet" />--%>
     <title>Lottery Simulator</title>
 <%--    <script type="text/javascript">
         function JScript() {
@@ -34,18 +28,16 @@
 </head>
 <body>
     <h1>Lottery Simulator</h1>
-    <%--http://tangledindesign.com/demos/css3-transitions/active/--%>
-    <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-    <div class="container">
+    <div class="container-flex">
     <div class="row">
         <div class="col-xs-12">
     <div class="numberOptions">
         <div class="wrapper">
-	        <div class="ball rollIn1"><%--rollIn1--%>
+	        <div class="ball rollIn1">
     	        <asp:Label class="ballLabel" ID="LabelBall1" runat="server" Text=""></asp:Label>
             </div>
 	        <div class="ball rollIn1">
@@ -83,7 +75,7 @@
                 - The value of a 'Lucky Dip' is £2.&lt;br /&gt;
                 - 'Luck' is calculated as the prizes/expectancy.&lt;br /&gt;
                 - 'Expectancy' is calculated as the average winnings for the number of tickets bought.&lt;br /&gt;
-                - Prizes are as follows: £2m-Jackpot, £50k-5 balls + bonus, £1k-5 balls, £100--4 balls, £25-3 balls, Lucky Dip-2 balls" BorderStyle="Solid" BorderWidth="2px" TextMode="MultiLine" Width="100%"></asp:Label>
+                - Prizes are as follows: £2m-Jackpot, £50k-5 balls + bonus, £1k-5 balls, £100--4 balls, £25-3 balls, Lucky Dip-2 balls" BorderStyle="Groove" BorderWidth="1px" TextMode="MultiLine" Width="100%" BorderColor="LightBlue"></asp:Label>
         </asp:Panel>
     </div>
     <div class="stats">
@@ -243,10 +235,6 @@
             <br />
         </asp:Panel>
     </div>
-<%--    <div class="graph">
-    </div>--%>
-    <div class="moreInfo">
-    </div>
     </div>
     </div>
     </div>
@@ -254,6 +242,5 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
-    <%--<asp:UpdateProgress ID="UpdateProgress1" runat="server"></asp:UpdateProgress>--%>
 </body>
 </html>
