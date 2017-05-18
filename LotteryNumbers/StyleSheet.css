@@ -1,23 +1,86 @@
 ﻿* {
     font-family: 'Martel Sans', sans-serif !important;
-    color:darkblue;
+    color:white;
+    text-shadow: 1px 1px 1px black;
 }
 body {
     width: 90%;
-    margin: 5%;
-    text-align: center;
-    background-color:lightyellow;
-}
-.ballLabel {
-    margin: 3%;
-}
-#ButtonPickNumbers, #ButtonRunSimulations {
-    cursor: pointer;
-}
-body {
+    margin: 2% 5% 5% 5%;
     overflow-x: hidden;
     text-align:center;
+    background-image: url("lotteryBackground.jpg");
+    background-repeat: repeat-y;
+    background-size:100%;
 }
+
+.jumbotron {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.myHeading h1 {
+    background-color: rgba(51,143,226,0.6);
+    padding: 15px 0 10px 0;
+    margin-bottom: 20px;
+}
+
+.ballLabel {
+    margin: 3%;
+    text-shadow: none;
+}
+
+#ButtonPickNumbers, #ButtonRunSimulations, #ButtonMoreInfo, #ButtonReset {
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: rgba(51,143,226,0.6);
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 2px solid rgba(14, 93, 154, 0.43);
+}
+
+#ButtonPickNumbers:hover, #ButtonRunSimulations:hover, #ButtonMoreInfo:hover, #ButtonReset:hover {
+    /*cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px 20px;*/
+    background-color: rgba(25,71,113, 0.5);
+    border: 2px solid rgba(14, 93, 154, 1);
+}
+
+#DropDownListSims {
+    margin-top: 20px;
+    background-color: transparent;
+    padding: 6px 0;
+    border: 2px solid white;
+}
+
+#DropDownListSims option {
+    color: black;
+}
+
+#ButtonMoreInfo {
+    margin-bottom: 30px;
+}
+
+.leftHeader {
+    text-align: left;
+    /*color: red;*/
+}
+.rightHeader {
+    text-align: right !important;
+}
+.centerHeader {
+    text-align: center;
+    /*color: red;*/
+}
+#LabelSimNo {
+    margin-top: 20px;
+    background-color: rgba(51,143,226,0.6);
+    border-radius: 5px;
+    padding: 8px 10px;
+    border: 2px solid rgba(14, 93, 154, 0.43);
+}
+
 .ball {
     position: relative;
     height: 12vw;
@@ -26,9 +89,10 @@ body {
     border-radius: 7vw;
     display: inline-block;
     background:#2081cb;
-    background-image: -moz-radial-gradient(90px 90px, circle, #dbeaf5 0%, #a5cdea 10%, #6fb3e6 20%, #238fe2 30%, #2081cb 50%, #0e5d99 70%);
-    background-image: -webkit-radial-gradient(90px 90px, circle, #dbeaf5 0%, #a5cdea 10%, #6fb3e6 20%, #238fe2 30%, #2081cb 50%, #0e5d99 70%);
-    background-image: -o-radial-gradient(90px 90px, circle, #dbeaf5 0%, #a5cdea 10%, #6fb3e6 20%, #238fe2 30%, #2081cb 50%, #0e5d99 70%);
+    background-image: -moz-radial-gradient(90px 90px, circle, #ebeaf5 0%, #b5cdea 10%, #7fb3e6 20%, #338fe2 30%, #3081cb 50%, #1e5d99 70%);
+    background-image: -webkit-radial-gradient(90px 90px, circle, #ebeaf5 0%, #b5cdea 10%, #7fb3e6 20%, #338fe2 30%, #3081cb 50%, #1e5d99 70%);
+    background-image: -o-radial-gradient(90px 90px, circle, #ebeaf5 0%, #b5cdea 10%, #7fb3e6 20%, #338fe2 30%, #3081cb 50%, #1e5d99 70%);
+    background-image: radial-gradient(90px 90px, circle, #ebeaf5 0%, #b5cdea 10%, #7fb3e6 20%, #338fe2 30%, #3081cb 50%, #1e5d99 70%);
                 
 }
 .rollIn1 {
@@ -98,11 +162,13 @@ h1 {
 }
 
 #PanelStats {
-    border: 1px groove lightblue;
+    /*border: 1px groove lightblue;*/
     padding:10px;
 }
 #PanelInfo {
     margin: 5px auto;
+    background-color: rgba(51,143,226,0.6);
+    padding: 10px 0;
 }
 @media screen and (max-width: 500px) {
     #TableStats {

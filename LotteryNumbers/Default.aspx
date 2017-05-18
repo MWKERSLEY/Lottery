@@ -27,7 +27,13 @@
     </script>--%>
 </head>
 <body>
-    <h1>Lottery Simulator</h1>
+    <%--<div style="background-color:rgba(255, 23, 23, 0.1); position:absolute; width:120%; height:220%; margin:-12%; overflow-y:hidden;"></div>--%>
+    <div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 myHeading">
+            <h1>Lottery Simulator</h1>
+        </div>
+    </div>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -75,7 +81,7 @@
                 - The value of a 'Lucky Dip' is £2.&lt;br /&gt;
                 - 'Luck' is calculated as the prizes/expectancy.&lt;br /&gt;
                 - 'Expectancy' is calculated as the average winnings for the number of tickets bought.&lt;br /&gt;
-                - Prizes are as follows: £2m-Jackpot, £50k-5 balls + bonus, £1k-5 balls, £100--4 balls, £25-3 balls, Lucky Dip-2 balls" BorderStyle="Groove" BorderWidth="1px" TextMode="MultiLine" Width="100%" BorderColor="LightBlue"></asp:Label>
+                - Prizes are as follows: £2m-Jackpot, £50k-5 balls + bonus, £1k-5 balls, £100--4 balls, £25-3 balls, Lucky Dip-2 balls"  TextMode="MultiLine"></asp:Label>
         </asp:Panel>
     </div>
     <div class="stats">
@@ -94,11 +100,11 @@
                 <asp:TableHeaderRow 
                     runat="server"
                     HorizontalAlign="Center">
-                    <asp:TableHeaderCell Font-Bold="False" HorizontalAlign="Center">Outcomes</asp:TableHeaderCell>
-                    <asp:TableHeaderCell Font-Bold="False">Wins</asp:TableHeaderCell>
-                    <asp:TableHeaderCell Font-Bold="False">Prize</asp:TableHeaderCell>
-                    <asp:TableHeaderCell Font-Bold="False">Expectancy</asp:TableHeaderCell>
-                    <asp:TableHeaderCell Font-Bold="False">Luck</asp:TableHeaderCell>
+                    <asp:TableHeaderCell Font-Bold="False" HorizontalAlign="Center" CssClass="leftHeader">Outcomes</asp:TableHeaderCell>
+                    <asp:TableHeaderCell Font-Bold="False" CssClass="centerHeader">Wins</asp:TableHeaderCell>
+                    <asp:TableHeaderCell Font-Bold="False" CssClass="centerHeader">Prize</asp:TableHeaderCell>
+                    <asp:TableHeaderCell Font-Bold="False" CssClass="centerHeader">Expectancy</asp:TableHeaderCell>
+                    <asp:TableHeaderCell Font-Bold="False" CssClass="rightHeader">Luck</asp:TableHeaderCell>
                 </asp:TableHeaderRow>
                 <asp:TableRow 
                     ID="TableRow1" 
@@ -110,124 +116,124 @@
                         <asp:Label ID="BallMatches1Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches1Expected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="BallMatches1Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow 
                     ID="TableRow2" 
                     runat="server"
                     >
-                    <asp:TableCell>2 Balls</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">2 Balls</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches2" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches2Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches2Expected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="BallMatches2Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow 
                     ID="TableRow3" 
                     runat="server"
                     >
-                    <asp:TableCell>3 Balls</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">3 Balls</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches3" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches3Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches3Expected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="BallMatches3Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow 
                     ID="TableRow4" 
                     runat="server"
                     >
-                    <asp:TableCell>4 Balls</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">4 Balls</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches4" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches4Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches4Expected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="BallMatches4Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow 
                     ID="TableRow5" 
                     runat="server"
                     >
-                    <asp:TableCell>5 Balls</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">5 Balls</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches5" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches5Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches5Expected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="BallMatches5Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow 
                     ID="TableRow6" 
                     runat="server"
                     >
-                    <asp:TableCell>5 Balls + Bonus</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">5 Balls + Bonus</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches5Plus" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches5PlusWinnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches5PlusExpected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="BallMatches5PlusLuck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow 
                     ID="TableRow7" 
                     runat="server"
                     >
-                    <asp:TableCell>6 Balls</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">6 Balls</asp:TableCell>
                     <asp:TableCell><asp:Label ID="BallMatches6" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches6Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="BallMatches6Expected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="BallMatches6Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow 
                     ID="TableRow8" 
                     runat="server"
                     >
-                    <asp:TableCell>Millionaire Raffle</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">Millionaire Raffle</asp:TableCell>
                     <asp:TableCell><asp:Label ID="Raffle1Matches" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="Raffle1Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="Raffle1Expected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="Raffle1Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow 
                     ID="TableRow9" 
                     runat="server"
                     >
-                    <asp:TableCell>£20K Raffle</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">£20K Raffle</asp:TableCell>
                     <asp:TableCell><asp:Label ID="Raffle2Matches" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="Raffle2Winnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="Raffle2Expected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="Raffle2Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableFooterRow 
                     runat="server" 
                     >
-                    <asp:TableCell>Total:</asp:TableCell>
+                    <asp:TableCell CssClass="leftHeader">Total:</asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="TotalMatches" runat="server" Text="0"></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="TotalWinnings" runat="server" Text=""></asp:Label></asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="TotalExpected" runat="server" Text=""></asp:Label></asp:TableCell>
-                    <asp:TableCell>
+                    <asp:TableCell CssClass="rightHeader">
                         <asp:Label ID="Total1Luck" runat="server" Text=""></asp:Label></asp:TableCell>
                 </asp:TableFooterRow>
             </asp:Table>
@@ -242,5 +248,6 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
+        </div>
 </body>
 </html>
