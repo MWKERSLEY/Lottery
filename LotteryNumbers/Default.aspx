@@ -63,8 +63,16 @@
             </div>
         </div>
         
-    <div id="buttonDraw"><asp:Button ID="ButtonPickNumbers" runat="server" Text="Generate New Numbers" onClick="ButtonPickNumbers_Click" /></div><%-- OnClientClick="return JScript();" --%>
+    <span id="buttonDraw"><asp:Button ID="ButtonPickNumbers" runat="server" Text="Generate New Numbers" onClick="ButtonPickNumbers_Click" /></span><%-- OnClientClick="return JScript();" --%>
+        <asp:Button ID="ButtonMoreInfo" runat="server" Text="More Info" OnClick="ButtonMoreInfo_Click" />
         <br />
+        <asp:Panel ID="PanelInfo" runat="server" Visible="False">
+            <asp:Label runat="server" Text="- This is a simulation of the UK National Lottery 'Lotto' main draw.&lt;br /&gt;
+                - The value of a 'Lucky Dip' is £2.&lt;br /&gt;
+                - 'Luck' is calculated as the prizes/expectancy.&lt;br /&gt;
+                - 'Expectancy' is calculated as the average winnings for the number of tickets bought.&lt;br /&gt;
+                - Prizes are as follows: £2m-Jackpot, £50k-5 balls + bonus, £1k-5 balls, £100--4 balls, £25-3 balls, Lucky Dip-2 balls"  TextMode="MultiLine"></asp:Label>
+        </asp:Panel>
         <asp:Label ID="LabelSimNo" runat="server" Text="Number of draws to simulate:"></asp:Label>
         <asp:DropDownList ID="DropDownListSims" runat="server">
             <asp:ListItem>1</asp:ListItem>
@@ -73,16 +81,7 @@
             <asp:ListItem>1000</asp:ListItem>
             <asp:ListItem>10000</asp:ListItem>
         </asp:DropDownList>
-        <asp:Button ID="ButtonRunSimulations" runat="server" Text="Test These Numbers" OnClick="ButtonRunSimulations_Click" /><%--OnClientClick="return JScript2();" --%><br />
-        <asp:Button ID="ButtonMoreInfo" runat="server" Text="More Info" OnClick="ButtonMoreInfo_Click" />
-        <asp:Panel ID="PanelInfo" runat="server" Visible="False">
-
-            <asp:Label runat="server" Text="- This is a simulation of the UK National Lottery 'Lotto' main draw.&lt;br /&gt;
-                - The value of a 'Lucky Dip' is £2.&lt;br /&gt;
-                - 'Luck' is calculated as the prizes/expectancy.&lt;br /&gt;
-                - 'Expectancy' is calculated as the average winnings for the number of tickets bought.&lt;br /&gt;
-                - Prizes are as follows: £2m-Jackpot, £50k-5 balls + bonus, £1k-5 balls, £100--4 balls, £25-3 balls, Lucky Dip-2 balls"  TextMode="MultiLine"></asp:Label>
-        </asp:Panel>
+        <asp:Button ID="ButtonRunSimulations" runat="server" Text="Run Simulations" OnClick="ButtonRunSimulations_Click" /><%--OnClientClick="return JScript2();" --%><br />
     </div>
     <div class="stats">
         <asp:Panel ID="PanelStats" runat="server" Visible="False">
@@ -244,7 +243,6 @@
     </div>
     </div>
     </div>
-
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
